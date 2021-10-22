@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Welcome To Employee Attendance Management System</h1><hr><br><br>
+<div class="col">
+    <h2>Are you employee?</h2>
+    <a href="{%  url 'employee_login' %}" class="btn btn-primary">click here</a>
+</div>
+
+<div class="col">
+    <h2>Are you admin?</h2><a href="{%  url 'admin_login' %}" class="btn btn-primary">click here</a>
+</div>
+
+
+{% endblock content %}

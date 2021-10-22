@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Employee login page</h1><hr><br>
+<div class="col-sm-3">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="login" class="btn btn-primary">
+        <a href="{% url 'home' %}" class="btn btn-primary">cancel</a>
+    </form>
+    
+</div>
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Employee Attendance Details</h1><hr><br>
+<table class="table table-hover bg-white">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Employee Username</th>
+        <th scope="col">From Day</th>
+        <th scope="col">From Date Day</th>
+        <th scope="col">To Day</th>
+        <th scope="col">To Date Day</th>
+        <th scope="col">Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for dt in data %}
+        <tr>
+            <td>{{dt.id}}</td>
+            <td>{{dt.user}} </td>
+            <td>{{dt.from_date}}</td>
+            <td>{{dt.from_date_day}}</td>
+            <td>{{dt.to_date}}</td>
+            <td>{{dt.to_date_day}}</td>
+            <td>{{dt.reason}}</td>
+        
+            
+        </tr>
+        {% endfor %} <br>
+    </tbody>
+  </table>
+  <a href="{% url 'admin_dashboard' %}" class="btn btn-primary">Back</a> 
+{% endblock content %}
+

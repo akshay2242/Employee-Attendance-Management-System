@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Welcome Admin</h1><hr><br>
+<div class="col-sm-6">
+    <div class="btn-group-vertical">
+        <a href="{% url 'add_employee' %}" class="btn btn-primary">add employee</a><br>
+        <a href="{% url 'employee_details' %}" class="btn btn-primary">view all employee</a><br>
+        <a href="{% url 'add_attendance' %}" class="btn btn-primary">add attendance</a><br>
+        <a href="{% url 'attendance_details' %}" class="btn btn-primary">view attendance details</a><br>
+        <a href="{% url 'emp_leave_details' %}" class="btn btn-primary">Emloyees leave request</a><br>
+        <a href="{% url 'logout' %}" class="btn btn-primary">logout</a> <br>
+    </div>
+</div>
+
+{% endblock content %}
+

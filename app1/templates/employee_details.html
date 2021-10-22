@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Employee Details</h1><hr><br>
+<table class="table table-hover bg-white">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Username</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">DOJ</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for dt in data %}
+        <tr>
+            <td>{{dt.id}}</td>
+            <td>{{dt.username}}</td>
+            <td>{{dt.first_name}}</td>
+            <td>{{dt.last_name}}</td>
+            <td>{{dt.date_of_joining}}</td>
+            <td>
+            <form action="{% url 'delete_employee' dt.id %}" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="delete" class="btn btn-warning btn-sm">
+            </form>
+            </td>
+        </tr>
+        {% endfor %} <br>
+    </tbody>
+  </table>
+  <a href="{% url 'admin_dashboard' %}" class="btn btn-primary">Back</a> 
+{% endblock content %}
+

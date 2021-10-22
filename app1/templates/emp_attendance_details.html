@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Attendance Details</h1><hr><br>
+<table class="table table-hover bg-white">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">In Time</th>
+        <th scope="col">Out Time</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for dt in data %}
+        <tr>
+            <td>{{dt.attendance_date}}</td>
+            <td>{{dt.in_time}}</td>
+            <td>{{dt.out_time}}</td>            
+        </tr>
+        {% endfor %} <br>
+    </tbody>
+  </table>
+  <a href="{% url 'employee_dashboard' %}" class="btn btn-primary">Back</a> 
+{% endblock content %}
+
